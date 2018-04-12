@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LoanDataSchemaModelStoreContainer" CdmEntityContainer="LoanDataSchemaEntities">
+    <EntitySetMapping Name="tblAlerts">
+      <EntityTypeMapping TypeName="LoanDataSchemaModel.tblAlert">
+        <MappingFragment StoreEntitySet="tblAlert">
+          <ScalarProperty Name="tbAlertID" ColumnName="tbAlertID" />
+          <ScalarProperty Name="subject" ColumnName="subject" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="createdAt" ColumnName="createdAt" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblLoans">
+      <EntityTypeMapping TypeName="LoanDataSchemaModel.tblLoan">
+        <MappingFragment StoreEntitySet="tblLoan">
+          <ScalarProperty Name="tbLoanId" ColumnName="tbLoanId" />
+          <ScalarProperty Name="ActualLoanid" ColumnName="ActualLoanid" />
+          <ScalarProperty Name="primaryBorowerID" ColumnName="primaryBorowerID" />
+          <ScalarProperty Name="createdAt" ColumnName="createdAt" />
+          <ScalarProperty Name="modifiedAt" ColumnName="modifiedAt" />
+          <ScalarProperty Name="tblStatusID" ColumnName="tblStatusID" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblLoanStatus">
+      <EntityTypeMapping TypeName="LoanDataSchemaModel.tblLoanStatu">
+        <MappingFragment StoreEntitySet="tblLoanStatus">
+          <ScalarProperty Name="tbStatusID" ColumnName="tbStatusID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Label" ColumnName="Label" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblRoles">
+      <EntityTypeMapping TypeName="LoanDataSchemaModel.tblRole">
+        <MappingFragment StoreEntitySet="tblRole">
+          <ScalarProperty Name="tbRoleID" ColumnName="tbRoleID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSettings">
+      <EntityTypeMapping TypeName="LoanDataSchemaModel.tblSetting">
+        <MappingFragment StoreEntitySet="tblSetting">
+          <ScalarProperty Name="tbSettingsID" ColumnName="tbSettingsID" />
+          <ScalarProperty Name="tbUserID" ColumnName="tbUserID" />
+          <ScalarProperty Name="isAllSettingsEnabled" ColumnName="isAllSettingsEnabled" />
+          <ScalarProperty Name="isPushNotificationEnabled" ColumnName="isPushNotificationEnabled" />
+          <ScalarProperty Name="isAlertEnabled" ColumnName="isAlertEnabled" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUsers">
+      <EntityTypeMapping TypeName="LoanDataSchemaModel.tblUser">
+        <MappingFragment StoreEntitySet="tblUser">
+          <ScalarProperty Name="tbUserID" ColumnName="tbUserID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUserAlerts">
+      <EntityTypeMapping TypeName="LoanDataSchemaModel.tblUserAlert">
+        <MappingFragment StoreEntitySet="tblUserAlert">
+          <ScalarProperty Name="tbUserID" ColumnName="tbUserID" />
+          <ScalarProperty Name="tbAlertID" ColumnName="tbAlertID" />
+          <ScalarProperty Name="isRead" ColumnName="isRead" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUserLoans">
+      <EntityTypeMapping TypeName="LoanDataSchemaModel.tblUserLoan">
+        <MappingFragment StoreEntitySet="tblUserLoan">
+          <ScalarProperty Name="tbLoanID" ColumnName="tbLoanID" />
+          <ScalarProperty Name="tbUserID" ColumnName="tbUserID" />
+          <ScalarProperty Name="tbRoleID" ColumnName="tbRoleID" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="tblUserRole" TypeName="LoanDataSchemaModel.tblUserRole" StoreEntitySet="tblUserRole">
+      <EndProperty Name="tblRole">
+        <ScalarProperty Name="tbRoleID" ColumnName="tbRoleID" />
+      </EndProperty>
+      <EndProperty Name="tblUser">
+        <ScalarProperty Name="tbUserID" ColumnName="tbUserID" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>
